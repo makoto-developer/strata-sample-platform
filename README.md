@@ -1,6 +1,8 @@
 # strata-sample-platform
 
 [Strata](https://github.com/makoto-developer/strata)（依存関係の可視化・解析ツール）の**動作確認用サンプルシステム**です。
+
+> 📖 Strata の使い方: <https://makoto-developer.github.io/strata/>
 実運用の EC プラットフォームを模した、**多言語・複数プロトコル**のマイクロサービス群になっています。
 
 実行して動くサービスではなく、**解析対象として現実的な形**を持たせることが目的です
