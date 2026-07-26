@@ -1,0 +1,7 @@
+{
+  "name": "@platform/web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "dependencies": { "graphql": "^16.8.0", "graphql-request": "^6.1.0" }
+}

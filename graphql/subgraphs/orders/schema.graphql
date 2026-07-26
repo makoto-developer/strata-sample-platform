@@ -1,0 +1,21 @@
+# orders サブグラフ。users サブグラフの User を注文一覧で拡張する。
+type Query {
+  order(id: ID!): Order
+  orders(userId: ID!): [Order!]!
+}
+
+type Mutation {
+  placeOrder(userId: ID!, sku: String!, quantity: Int!): Order!
+  cancelOrder(id: ID!): Order!
+}
+
+type Order @key(fields: "id") {
+  id: ID!
+  status: String!
+  total: Int!
+}
+
+extend type User @key(fields: "id") {
+  id: ID! @external
+  orders: [Order!]!
+}

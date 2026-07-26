@@ -1,0 +1,45 @@
+    syntax = "proto3";
+
+    package notification.v1;
+
+    option go_package = "github.com/makoto-developer/strata-sample-platform/proto/notification/v1;notificationv1";
+
+    // NotificationService は notification ドメインの gRPC API。
+    service NotificationService {
+      // メールを送る
+  rpc SendEmail(SendEmailRequest) returns (SendEmailReply);
+  // プッシュ通知を送る
+  rpc SendPush(SendPushRequest) returns (SendPushReply);
+  // 通知履歴を返す
+  rpc ListNotifications(ListNotificationsRequest) returns (ListNotificationsReply);
+    }
+
+    message SendEmailRequest {
+  string id = 1;
+  string actor_id = 2;
+}
+
+message SendEmailReply {
+  string id = 1;
+  string status = 2;
+}
+
+message SendPushRequest {
+  string id = 1;
+  string actor_id = 2;
+}
+
+message SendPushReply {
+  string id = 1;
+  string status = 2;
+}
+
+message ListNotificationsRequest {
+  string id = 1;
+  string actor_id = 2;
+}
+
+message ListNotificationsReply {
+  string id = 1;
+  string status = 2;
+}

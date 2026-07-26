@@ -1,0 +1,7 @@
+{
+  "name": "@platform/graphql-gateway",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "dependencies": { "@apollo/gateway": "^2.7.0", "@apollo/server": "^4.10.0" }
+}

@@ -1,0 +1,15 @@
+# catalog サブグラフ(Go / gqlgen)。Product エンティティの所有者。
+type Query {
+  product(id: ID!): Product
+  products(keyword: String): [Product!]!
+}
+
+type Mutation {
+  upsertProduct(id: ID!, name: String!, price: Int!): Product!
+}
+
+type Product @key(fields: "id") {
+  id: ID!
+  name: String!
+  price: Int!
+}

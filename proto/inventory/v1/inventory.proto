@@ -1,0 +1,57 @@
+    syntax = "proto3";
+
+    package inventory.v1;
+
+    option go_package = "github.com/makoto-developer/strata-sample-platform/proto/inventory/v1;inventoryv1";
+
+    // InventoryService は inventory ドメインの gRPC API。
+    service InventoryService {
+      // 在庫を取得する
+  rpc GetStock(GetStockRequest) returns (GetStockReply);
+  // 在庫を引き当てる
+  rpc ReserveStock(ReserveStockRequest) returns (ReserveStockReply);
+  // 引当を解放する
+  rpc ReleaseStock(ReleaseStockRequest) returns (ReleaseStockReply);
+  // 引当を確定する
+  rpc CommitStock(CommitStockRequest) returns (CommitStockReply);
+    }
+
+    message GetStockRequest {
+  string id = 1;
+  string actor_id = 2;
+}
+
+message GetStockReply {
+  string id = 1;
+  string status = 2;
+}
+
+message ReserveStockRequest {
+  string id = 1;
+  string actor_id = 2;
+}
+
+message ReserveStockReply {
+  string id = 1;
+  string status = 2;
+}
+
+message ReleaseStockRequest {
+  string id = 1;
+  string actor_id = 2;
+}
+
+message ReleaseStockReply {
+  string id = 1;
+  string status = 2;
+}
+
+message CommitStockRequest {
+  string id = 1;
+  string actor_id = 2;
+}
+
+message CommitStockReply {
+  string id = 1;
+  string status = 2;
+}

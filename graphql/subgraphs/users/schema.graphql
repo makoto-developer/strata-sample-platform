@@ -1,0 +1,17 @@
+# users サブグラフ。User エンティティの所有者。
+type Query {
+  me: User
+  user(id: ID!): User
+  users(limit: Int): [User!]!
+}
+
+type Mutation {
+  updateProfile(id: ID!, name: String!): User!
+  deactivateUser(id: ID!): Boolean!
+}
+
+type User @key(fields: "id") {
+  id: ID!
+  name: String!
+  email: String!
+}

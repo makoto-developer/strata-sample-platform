@@ -1,0 +1,57 @@
+    syntax = "proto3";
+
+    package catalog.v1;
+
+    option go_package = "github.com/makoto-developer/strata-sample-platform/proto/catalog/v1;catalogv1";
+
+    // CatalogService は catalog ドメインの gRPC API。
+    service CatalogService {
+      // 商品を 1 件取得する
+  rpc GetProduct(GetProductRequest) returns (GetProductReply);
+  // 商品を一覧する
+  rpc ListProducts(ListProductsRequest) returns (ListProductsReply);
+  // 商品を検索する
+  rpc SearchProducts(SearchProductsRequest) returns (SearchProductsReply);
+  // 商品を登録・更新する
+  rpc UpsertProduct(UpsertProductRequest) returns (UpsertProductReply);
+    }
+
+    message GetProductRequest {
+  string id = 1;
+  string actor_id = 2;
+}
+
+message GetProductReply {
+  string id = 1;
+  string status = 2;
+}
+
+message ListProductsRequest {
+  string id = 1;
+  string actor_id = 2;
+}
+
+message ListProductsReply {
+  string id = 1;
+  string status = 2;
+}
+
+message SearchProductsRequest {
+  string id = 1;
+  string actor_id = 2;
+}
+
+message SearchProductsReply {
+  string id = 1;
+  string status = 2;
+}
+
+message UpsertProductRequest {
+  string id = 1;
+  string actor_id = 2;
+}
+
+message UpsertProductReply {
+  string id = 1;
+  string status = 2;
+}

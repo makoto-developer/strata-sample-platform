@@ -1,0 +1,57 @@
+    syntax = "proto3";
+
+    package order.v1;
+
+    option go_package = "github.com/makoto-developer/strata-sample-platform/proto/order/v1;orderv1";
+
+    // OrderService は order ドメインの gRPC API。
+    service OrderService {
+      // 注文を作成する(Saga の起点)
+  rpc CreateOrder(CreateOrderRequest) returns (CreateOrderReply);
+  // 注文を取得する
+  rpc GetOrder(GetOrderRequest) returns (GetOrderReply);
+  // 注文を一覧する
+  rpc ListOrders(ListOrdersRequest) returns (ListOrdersReply);
+  // 注文をキャンセルする
+  rpc CancelOrder(CancelOrderRequest) returns (CancelOrderReply);
+    }
+
+    message CreateOrderRequest {
+  string id = 1;
+  string actor_id = 2;
+}
+
+message CreateOrderReply {
+  string id = 1;
+  string status = 2;
+}
+
+message GetOrderRequest {
+  string id = 1;
+  string actor_id = 2;
+}
+
+message GetOrderReply {
+  string id = 1;
+  string status = 2;
+}
+
+message ListOrdersRequest {
+  string id = 1;
+  string actor_id = 2;
+}
+
+message ListOrdersReply {
+  string id = 1;
+  string status = 2;
+}
+
+message CancelOrderRequest {
+  string id = 1;
+  string actor_id = 2;
+}
+
+message CancelOrderReply {
+  string id = 1;
+  string status = 2;
+}

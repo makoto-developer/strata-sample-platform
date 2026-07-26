@@ -1,0 +1,57 @@
+    syntax = "proto3";
+
+    package payment.v1;
+
+    option go_package = "github.com/makoto-developer/strata-sample-platform/proto/payment/v1;paymentv1";
+
+    // PaymentService は payment ドメインの gRPC API。
+    service PaymentService {
+      // 決済インテントを作る
+  rpc CreatePaymentIntent(CreatePaymentIntentRequest) returns (CreatePaymentIntentReply);
+  // 決済を確定する
+  rpc ConfirmPayment(ConfirmPaymentRequest) returns (ConfirmPaymentReply);
+  // 返金する
+  rpc RefundPayment(RefundPaymentRequest) returns (RefundPaymentReply);
+  // 決済を取得する
+  rpc GetPayment(GetPaymentRequest) returns (GetPaymentReply);
+    }
+
+    message CreatePaymentIntentRequest {
+  string id = 1;
+  string actor_id = 2;
+}
+
+message CreatePaymentIntentReply {
+  string id = 1;
+  string status = 2;
+}
+
+message ConfirmPaymentRequest {
+  string id = 1;
+  string actor_id = 2;
+}
+
+message ConfirmPaymentReply {
+  string id = 1;
+  string status = 2;
+}
+
+message RefundPaymentRequest {
+  string id = 1;
+  string actor_id = 2;
+}
+
+message RefundPaymentReply {
+  string id = 1;
+  string status = 2;
+}
+
+message GetPaymentRequest {
+  string id = 1;
+  string actor_id = 2;
+}
+
+message GetPaymentReply {
+  string id = 1;
+  string status = 2;
+}

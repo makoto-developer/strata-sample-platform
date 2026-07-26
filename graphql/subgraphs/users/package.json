@@ -1,0 +1,7 @@
+{
+  "name": "@platform/graphql-users",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "dependencies": { "@apollo/subgraph": "^2.7.0", "graphql": "^16.8.0" }
+}
