@@ -1,7 +1,13 @@
 module github.com/makoto-developer/strata-sample-platform/services/order
 
-go 1.22
+go 1.27
+
+require google.golang.org/grpc v1.84.0
 
 require (
-	google.golang.org/grpc v1.62.0
+	golang.org/x/net v0.61.0 // indirect
+	golang.org/x/sys v0.49.0 // indirect
+	golang.org/x/text v0.43.0 // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20260706201446-f0a921348800 // indirect
+	google.golang.org/protobuf v1.36.11 // indirect
 )
